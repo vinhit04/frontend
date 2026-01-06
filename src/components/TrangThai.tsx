@@ -2,7 +2,7 @@ import React from "react";
 type Props = {
   status: any;
 }
-function StatusTag({ status }:Props) {
+function TrangThai({ status }:Props) {
   if (status === "upcoming") {
     return (
       <span className="px-3 py-1 rounded-full text-sm bg-orange-100 text-orange-600">
@@ -23,5 +23,5 @@ function StatusTag({ status }:Props) {
     </span>
   );
 }
-export default StatusTag;
+export default TrangThai;
 

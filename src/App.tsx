@@ -1,18 +1,24 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import MainLayout from "./layouts/MainLayout";
-import Evaluation from "./pages/Evaluation";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Space from "./pages/Space";
-export default function App() {
-  return (
+import ViPham from "./pages/ViPham";
+import BaoCaoHangNgay from "./pages/BaoCaoHangNgay";
+import DanhGia from "./pages/DanhGia";
+import ThongTinChung from "./pages/ThongTinChung";
+import SinhVien from "./pages/SinhVien";
+ function App() {
+  return (  
     <BrowserRouter>
       <Routes>
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Navigate to="/evaluation" />} />
-          <Route path="/evaluation" element={<Evaluation />} />
+          <Route path="/danhgia" element={<DanhGia />} />
+          <Route path="/baocaohangngay" element={<BaoCaoHangNgay />} />
+          <Route path="/vipham" element={<ViPham />} />
           <Route path="/space" element={<Space />} />
-        </Route>
-      </Routes>
+         <Route path="/thongtinchung" element={<ThongTinChung />} />
+        <Route path="/danhgia" element={<DanhGia />} />
+        <Route path="/sinhvien" element={<SinhVien />} />
+        </Routes>
     </BrowserRouter>
   );
 }
+export default App;

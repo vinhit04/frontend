@@ -3,7 +3,7 @@ import { memo } from 'react';
 const Space = () => {
   return (
     <div>
-      <h2>Đây là trang Space</h2>
+      <h2>Day la trang Space</h2>
     </div>
   );
 };

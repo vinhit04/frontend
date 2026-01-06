@@ -40,7 +40,7 @@ const StatusTag = ({ status }: StatusTagProps) => {
     // </span> 
   );
 };
-function Evaluation() {
+function DanhGia() {
   return (
     <>
       <h1 className="text-2xl font-semibold mb-6">Đánh giá</h1>
@@ -83,4 +83,4 @@ function Evaluation() {
   );
 }
 
-export default Evaluation;
+export default DanhGia;
