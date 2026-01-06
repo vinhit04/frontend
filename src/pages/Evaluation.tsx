@@ -1,11 +1,10 @@
-import { StatusTagEnum } from "../common/enum/status-tag.enum";
 type Status = "upcoming" | "running" | "done";
 const data = [
   {
     name: "Đánh giá tuần 1-2",
     start: "01/01/2025",
     end: "01/01/2025",
-    status: StatusTagEnum.UPCOMING,
+    status: "upcoming" as Status,
     count: 20,
   },
   {
@@ -24,19 +23,21 @@ const data = [
   },
 ];
 type StatusTagProps = {
-  status: StatusTagEnum;
+  status: any;
 };
 const StatusTag = ({ status }: StatusTagProps) => {
   const map = {
-    [StatusTagEnum.UPCOMING]: ["Sắp diễn ra", "bg-orange-100 text-orange-600"],
-    [StatusTagEnum.RUNNING]: ["Đang diễn ra", "bg-green-100 text-green-600"],
-    [StatusTagEnum.DONE]: ["Đã kết thúc", "bg-red-100 text-red-600"],
+    upcoming: ["Sắp diễn ra", "bg-yellow-100 text-yellow-800"],
+    running: ["Đang diễn ra", "bg-green-100 text-green-800"],
+    done: ["Đã kết thúc", "bg-gray-100 text-gray-800"],
   };
   return (
     <></>
-    // <span className={`px-3 py-1 rounded-full text-sm ${map[status][1]}`}>
+    // <span
+    //   className={`px-3 py-1 rounded-full text-sm font-medium ${
+    //     map[status][1]  }`}>
     //   {map[status][0]}
-    // </span>
+    // </span> 
   );
 };
 function Evaluation() {
