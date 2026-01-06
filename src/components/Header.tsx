@@ -27,11 +27,7 @@ const Header: FC = () => {
             className="absolute -top-1 -right-1"
           />
         </Button>
-
-        
         <Button icon="pi pi-cog" rounded text />
-
-      
         <div className="flex items-center gap-2 cursor-pointer">
           <Avatar image="https://i.pravatar.cc/40" shape="circle" />
           <span className="hidden md:block text-sm font-medium text-gray-700">
