@@ -1,15 +1,18 @@
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Evaluation from "./pages/Evaluation";
+import "./App.css";
+import Space from "./pages/Space";
 export default function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          {/* <Route path="/" element={<MainLayout />} /> */}
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Navigate to="/evaluation" />} />
           <Route path="/evaluation" element={<Evaluation />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+          <Route path="/space" element={<Space />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }

@@ -4,7 +4,9 @@ import './index.css'
 import './App.css'
 import './components/Sidebar.tsx'
 import App from './App.tsx'
-
+import "primereact/resources/primereact.min.css";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primeicons/primeicons.css";
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />

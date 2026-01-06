@@ -1,6 +1,5 @@
-import React from "react"; 
+import React from "react";
 type Props = {
-  
   status: any;
 }
 function StatusTag({ status }:Props) {
@@ -25,4 +24,3 @@ function StatusTag({ status }:Props) {
   );
 }
 export default StatusTag;
-
