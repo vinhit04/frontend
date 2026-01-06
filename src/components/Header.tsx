@@ -1,8 +1,8 @@
 const Header = () => {
   return (
-   <div className="bg-white shadow p-4">
-      <h1 className="text-2xl font-semibold">Internship OneConnect</h1>
-    </div>
+    <header className="bg-white shadow p-4">
+      <h1 className="text-xl font-bold">Internship OneConnect</h1>
+    </header>
   );
 };
 export default Header;

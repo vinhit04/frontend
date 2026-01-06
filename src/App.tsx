@@ -6,9 +6,11 @@ import BaoCaoHangNgay from "./pages/BaoCaoHangNgay";
 import DanhGia from "./pages/DanhGia";
 import ThongTinChung from "./pages/ThongTinChung";
 import SinhVien from "./pages/SinhVien";
+import MainLayout from "./layouts/MainLayout";
  function App() {
-  return (  
-    <BrowserRouter>
+   return ( 
+     <BrowserRouter>
+       <MainLayout>
       <Routes>
           <Route path="/danhgia" element={<DanhGia />} />
           <Route path="/baocaohangngay" element={<BaoCaoHangNgay />} />
@@ -17,7 +19,8 @@ import SinhVien from "./pages/SinhVien";
          <Route path="/thongtinchung" element={<ThongTinChung />} />
         <Route path="/danhgia" element={<DanhGia />} />
         <Route path="/sinhvien" element={<SinhVien />} />
-        </Routes>
+         </Routes>
+        </MainLayout>
     </BrowserRouter>
   );
 }
