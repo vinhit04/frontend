@@ -33,9 +33,10 @@ const StatusTag = ({ status }: StatusTagProps) => {
     [StatusTagEnum.DONE]: ["Đã kết thúc", "bg-red-100 text-red-600"],
   };
   return (
-    <span className={`px-3 py-1 rounded-full text-sm ${map[status][1]}`}>
-      {map[status][0]}
-    </span>
+    <></>
+    // <span className={`px-3 py-1 rounded-full text-sm ${map[status][1]}`}>
+    //   {map[status][0]}
+    // </span>
   );
 };
 function Evaluation() {
@@ -54,11 +55,11 @@ function Evaluation() {
               <th className="px-6 py-3">Thời gian kết thúc</th>
               <th className="px-6 py-3">Trạng thái</th>
               <th className="px-6 py-3">Số sinh viên đã được chấm điểm</th>
-              <th className="px-6 py-3"></th>
+              <th className="px-6 py-3"></th>   
             </tr>
           </thead>
           <tbody>
-            {data.map((item, i) => (
+            {data.map((item: any, i) => (
               <tr key={i} className="border-t hover:bg-gray-50">
                 <td className="px-6 py-4 font-medium">{item.name}</td>
                 <td className="px-6 py-4 text-center">{item.start}</td>
