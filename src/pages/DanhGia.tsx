@@ -42,6 +42,13 @@ const data = [
     status: "running" as Status,
     count: 20,
   },
+  {
+    name: "Đánh giá cuối kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "done" as Status,
+    count: 20,
+  }
 ];
 type StatusTagProps = {
   status: any;
@@ -65,9 +72,9 @@ const StatusTag = ({ status }: StatusTagProps) => {
 function DanhGia() {
   return (
     <>
-      <div className="bg-white rounded-xl shadow">
-        <div className="px-6 py-4 border-b font-medium">Thông tin chung</div>
-
+      <DanhGia />
+      <div className="bg-white rounded-0 shadow">
+        <div className="px-6 py-4 border-b font-medium text-left text-2xl">Thông tin chung</div>
         <table className="w-full text-sm">
           <thead className="bg-gray-50 text-gray-500">
             <tr>
