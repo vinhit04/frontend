@@ -8,16 +8,10 @@ const Header: React.FC = () => {
           <i className="pi pi-bell text-xl"></i>
           <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
         </button>
-
         <button>
           <i className="pi pi-cog text-xl"></i>
         </button>
-
-        <img
-          src="https://i.pravatar.cc/40"
-          alt="Avatar"
-          className="w-10 h-10 rounded-full border"
-        />
+        <img src="../images/Avatar.png"></img>
       </div>
     </header>
   );

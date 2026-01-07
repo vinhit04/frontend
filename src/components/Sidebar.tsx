@@ -1,8 +1,7 @@
-import React from "react";
- function Sidebar() {
+function Sidebar() {
   return (
     <div className="sidebar">
-      <div className="logo">Internship OneConnect</div>
+      <img src="../images/Avatar.png" />
       <ul className="menu">
         <li>Space</li>
         <li>Dự án</li>
