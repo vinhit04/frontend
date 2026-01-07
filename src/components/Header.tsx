@@ -1,20 +1,13 @@
 const Header: React.FC = () => {
   return (
     <header className="bg-white shadow px-6 py-4 flex items-center justify-between">
-      <h1 className="text-xl font-semibold">Đánh giá</h1>
-
-      <div className="flex items-center gap-6">
-        <button className="relative">
-          <i className="pi pi-bell text-xl"></i>
-          <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-        </button>
-        <button>
-          <i className="pi pi-cog text-xl"></i>
-        </button>
-        <img src="../images/Avatar.png"></img>
+      <h1 className="text-2xl font-semibold text-gray-800">Danh Gia</h1>
+      <div className="flex items-center space-x-4">
+        <img src="../images/setting.png" />
+        <img src="../images/notification.png" />
+        <img src="../images/Avatar.png" className="w-8 h-8 rounded-full" />
       </div>
     </header>
   );
 };
-
 export default Header;
