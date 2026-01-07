@@ -1,4 +1,4 @@
-const Header: React.FC = () => {
+function Header() {
   return (
     <header className="bg-white shadow px-6 py-4 flex items-center justify-between">
       <h1 className="text-2xl font-semibold text-gray-800">Danh Gia</h1>
