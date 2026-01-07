@@ -72,7 +72,6 @@ const StatusTag = ({ status }: StatusTagProps) => {
 function DanhGia() {
   return (
     <>
-      <DanhGia />
       <div className="bg-white rounded-0 shadow">
         <div className="px-6 py-4 border-b font-medium text-left text-2xl">Thông tin chung</div>
         <table className="w-full text-sm">
