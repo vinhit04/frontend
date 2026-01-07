@@ -21,6 +21,27 @@ const data = [
     status: "done" as Status,
     count: 20,
   },
+  {
+    name: "Đánh giá cuối kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "done" as Status,
+    count: 20,
+  },
+  {
+    name: "Đánh giá cuối kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "done" as Status,
+    count: 20,
+  },
+  {
+    name: "Đánh giá cuối kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "done" as Status,
+    count: 20,
+  },
 ];
 type StatusTagProps = {
   status: any;
@@ -32,19 +53,18 @@ const StatusTag = ({ status }: StatusTagProps) => {
     done: ["Đã kết thúc", "bg-gray-100 text-gray-800"],
   };
   return (
-    <></>
-    // <span
-    //   className={`px-3 py-1 rounded-full text-sm font-medium ${
-    //     map[status][1]  }`}>
-    //   {map[status][0]}
-    // </span> 
+    <>
+    <span
+      className={`px-3 py-1 rounded-full text-sm font-medium ${
+        map[status][1]  }`}>
+       {map[status][0]}
+      </span>
+      </>
   );
 };
 function DanhGia() {
   return (
     <>
-      <h1 className="text-2xl font-semibold mb-6">Đánh giá</h1>
-
       <div className="bg-white rounded-xl shadow">
         <div className="px-6 py-4 border-b font-medium">Thông tin chung</div>
 
@@ -82,5 +102,5 @@ function DanhGia() {
     </>
   );
 }
-
 export default DanhGia;
+
