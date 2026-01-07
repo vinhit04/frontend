@@ -1,7 +1,8 @@
+import avatar from "../images/Avatar.png";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <img src="../images/Avatar.png" />
+      <img src={avatar} />
       <ul className="menu">
         <li>Space</li>
         <li>Dự án</li>
