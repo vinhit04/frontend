@@ -1,8 +1,10 @@
-import avatar from "../images/Avatar.png";
+import logo from "../images/Logo.png";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <img src={avatar} />
+      <div className="logo" px-6 py-4>
+      <img src={logo} />
+      </div>
       <ul className="menu">
         <li>Space</li>
         <li>Dự án</li>

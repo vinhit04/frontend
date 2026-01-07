@@ -22,24 +22,24 @@ const data = [
     count: 20,
   },
   {
-    name: "Đánh giá cuối kỳ",
+    name: "Đánh giá tuần 1-2",
     start: "01/01/2025",
     end: "01/01/2025",
-    status: "done" as Status,
+    status: "upcoming" as Status,
     count: 20,
   },
   {
-    name: "Đánh giá cuối kỳ",
+    name: "Đánh giá tuần 1-2",
     start: "01/01/2025",
     end: "01/01/2025",
-    status: "done" as Status,
+    status: "upcoming" as Status,
     count: 20,
   },
   {
-    name: "Đánh giá cuối kỳ",
+    name: "Đánh giá giữa kỳ",
     start: "01/01/2025",
     end: "01/01/2025",
-    status: "done" as Status,
+    status: "running" as Status,
     count: 20,
   },
 ];
@@ -91,7 +91,7 @@ function DanhGia() {
                 <td className="px-6 py-4 text-center">{item.count}</td>
                 <td className="px-6 py-4 text-right">
                   <button className="px-4 py-2 border rounded-lg hover:bg-gray-100">
-                    Chi tiết
+                    ...
                   </button>
                 </td>
               </tr>
