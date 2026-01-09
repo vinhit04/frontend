@@ -1,4 +1,3 @@
-
 import {
   ArrowLeftOutlined,
   BellOutlined,
@@ -14,8 +13,6 @@ export default function Header() {
         <ArrowLeftOutlined />
         <span className="text-sm">Trở lại trang trước</span>
       </div>
-
-     
       <div className="flex items-center gap-4">
         <SettingOutlined className="text-lg text-gray-600 cursor-pointer" />
         <BellOutlined className="text-lg text-gray-600 cursor-pointer" />

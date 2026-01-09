@@ -1,8 +1,8 @@
-// components/EvaluationTable.tsx
 import { Table, Tag, Button } from "antd";
 
 interface DanhGia {
   key: string;
+  info: string; 
   name: string;
   start: string;
   end: string;
@@ -13,7 +13,8 @@ interface DanhGia {
 const data: DanhGia[] = [
   {
     key: "1",
-    name: "Đánh giá tuần 1-2",
+    info: "Đánh giá định kỳ",
+    name: "Đánh giá tuần 1–2",
     start: "01/01/2025",
     end: "01/01/2025",
     status: "Sắp diễn ra",
@@ -21,32 +22,30 @@ const data: DanhGia[] = [
   },
   {
     key: "2",
+    info: "Đánh giá giữa kỳ",
     name: "Đánh giá giữa kỳ",
     start: "01/01/2025",
     end: "01/01/2025",
     status: "Đang diễn ra",
     total: 20,
   },
-  {
-    key: "3",
-    name: "Đánh giá cuối kỳ",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Đã kết thúc",
-    total: 20,
-  },
 ];
 
-const statusColor = {
+const statusColor: Record<string, string> = {
   "Sắp diễn ra": "orange",
   "Đang diễn ra": "green",
   "Đã kết thúc": "red",
 };
 
-export default function DanhGiaTable() {
+export default function EvaluationTable() {
   return (
-    <Table
+    <Table<DanhGia>
+      pagination={false}
       columns={[
+        {
+          title: "Thông tin chung",
+          dataIndex: "info",
+        },
         {
           title: "Tên chu kỳ",
           dataIndex: "name",
@@ -70,11 +69,10 @@ export default function DanhGiaTable() {
         },
         {
           title: "",
-          render: () => <Button size="small">Chi tiết</Button>,
+          render: () => <Button type="link">Chi tiết</Button>,
         },
       ]}
       dataSource={data}
-      pagination={false}
     />
   );
 }

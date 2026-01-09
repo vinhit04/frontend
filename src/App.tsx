@@ -1,10 +1,9 @@
-import MainLayout from "./Layout/Mainlayout";
-import DanhGia from "./pages/DanhGia";
-import "antd/dist/reset.css";
+import Sidebar from "./Layout/Sidebar";
 export default function App() {
   return (
-    <MainLayout>
-      <DanhGia />
-    </MainLayout>
+    <div className="flex h-screen bg-gray-100">
+      <Sidebar />
+      <main className="flex-1 p-6"></main>
+    </div>
   );
 }
