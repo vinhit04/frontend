@@ -37,7 +37,7 @@ const statusColor: Record<string, string> = {
   "Đã kết thúc": "red",
 };
 
-export default function EvaluationTable() {
+export default function DanhGiaTable() {
   return (
     <Table<DanhGia>
       pagination={false}
