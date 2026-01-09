@@ -1,5 +1,4 @@
 import { Table, Tag, Button } from "antd";
-
 interface DanhGia {
   key: string;
   info: string; 
@@ -29,14 +28,66 @@ const data: DanhGia[] = [
     status: "Đang diễn ra",
     total: 20,
   },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đã kết thúc",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đã kết thúc",
+    total: 20,
+  },
 ];
-
 const statusColor: Record<string, string> = {
   "Sắp diễn ra": "orange",
   "Đang diễn ra": "green",
   "Đã kết thúc": "red",
 };
-
 export default function DanhGiaTable() {
   return (
     <Table<DanhGia>
