@@ -94,10 +94,6 @@ export default function DanhGiaTable() {
       pagination={false}
       columns={[
         {
-          title: "Thông tin chung",
-          dataIndex: "info",
-        },
-        {
           title: "Tên chu kỳ",
           dataIndex: "name",
         },
