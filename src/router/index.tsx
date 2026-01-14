@@ -1,4 +1,3 @@
-import React from "react";
 import {
   AppstoreOutlined,
   FileDoneOutlined,
@@ -8,10 +7,14 @@ import {
   TeamOutlined,
   WarningOutlined,
 } from "@ant-design/icons";
-import DanhGia from "../pages/DanhGia";
-import ReviewDetail from "../pages/ReviewDetail";
+
 export const menuItems = [
-  { key: "space", icon: <AppstoreOutlined />, url: "/space", label: "Space" },
+  {
+    key: "space",
+    icon: <AppstoreOutlined />,
+    url: "/space",
+    label: "Space",
+  },
   {
     key: "project",
     icon: <FolderOutlined />,
@@ -41,14 +44,6 @@ export const menuItems = [
     icon: <FileTextOutlined />,
     url: "/evaluate",
     label: "Đánh giá",
-    element: <DanhGia />,
-  },
-  {
-    key: "evaluation/:id",
-    icon: <FileTextOutlined />,
-    url: "/evaluate/:id",
-    label: "Đánh giá chi tiết",
-    element: <ReviewDetail />,
   },
   {
     key: "violation",
@@ -57,3 +52,4 @@ export const menuItems = [
     label: "Vi phạm",
   },
 ];
+
