@@ -1,4 +1,5 @@
 import { Table, Tag, Button } from "antd";
+import { useNavigate } from "react-router-dom";
 interface DanhGia {
   key: string;
   info: string; 
@@ -89,6 +90,7 @@ const statusColor: Record<string, string> = {
   "Đã kết thúc": "red",
 };
 export default function DanhGiaTable() {
+  const navigate = useNavigate();
   return (
     <Table<DanhGia>
       pagination={false}
@@ -120,6 +122,13 @@ export default function DanhGiaTable() {
         },
       ]}
       dataSource={data}
+      onRow={(record) => {
+        return {
+          onClick: () => {
+            navigate(`/evaluate/${record.key}`);
+          },
+        };
+      }}
     />
   );
 }
