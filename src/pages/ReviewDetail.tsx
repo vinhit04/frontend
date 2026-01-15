@@ -110,25 +110,63 @@ const ReviewDetail: React.FC = () => {
   ];
   return (
     <div className="p-6 space-y-6">
-      <Button type="link" onClick={() => navigate(-1)}>
+      {/* <Button type="link" onClick={() => navigate(-1)}>
         ← Trở lại
-      </Button>
+      </Button> */}
 
-      <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-semibold">
-          Danh sách sinh viên – Chu kỳ #{id}
-        </h2>
+      <span
+        className=" text-sm cursor-pointer flex items-center gap-1" >
+        Đánh giá <span className="text-gray-400">{'>'}</span> chi tiết chu kỳ
+      </span>
+      <h1 className="text-2xl font-semibold">Chi tiết chu kỳ</h1>
 
-        <div className="flex gap-2">
-          <Button type="default">AI chấm điểm hàng loạt</Button>
-          <Button type="default">Chấm điểm hàng loạt</Button>
-          <Button type="primary" danger>
-            Import điểm
-          </Button>
+      <Card style={{ marginBottom: '30px' }}>
+        <div>
+          <h2 className="text-xl font-semibold text-gray-800 mb-3">
+            Thông tin chung
+          </h2>
+          <div className="border-b border-gray-200 mb-4" />
+          <div className="flex justify-between items-start gap-6">
+            <div>
+              <span className="text-sm text-gray-500">Tên chu kỳ</span>
+              <h2 className="text-lg font-semibold text-gray-800">
+                Đánh giá tuần 1-2
+              </h2>
+            </div>
+
+            <div>
+              <span className="text-sm text-gray-500">Thời gian</span>
+              <h2 className="text-lg font-semibold text-gray-800">
+                18/11/2025 - 18/11/2025
+              </h2>
+            </div>
+            <div>
+              <span className="text-sm text-gray-500 block mb-1">
+                Trạng thái
+              </span>
+              <span className=" inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-green-700 bg-green-100">
+                Đang diễn ra
+              </span>
+            </div>
+          </div>
         </div>
-      </div>
+      </Card>
 
-      <Card>
+
+      <Card className="">
+        <div className="flex justify-between my-4">
+          <h2 className="text-xl font-semibold">
+            Danh sách sinh viên
+          </h2>
+          <div className="flex gap-2">
+            <Button type="default">AI chấm điểm hàng loạt</Button>
+            <Button type="default">Chấm điểm hàng loạt</Button>
+            <Button type="primary" danger>
+              Import điểm
+            </Button>
+          </div>
+        </div>
+
         <Table
           rowKey="id"
           columns={columns}
