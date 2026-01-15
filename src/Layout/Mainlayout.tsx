@@ -17,10 +17,6 @@ export default function MainLayout() {
         <main className="flex-1 p-6 overflow-auto">
           <span className="text-xl font-semibold mb-4">Đánh giá
           </span>
-          <span className="mx-2 text-gray-400">{'>'}</span>
-          <span className="text-gray-900 font-semibold">
-           Chi tiết chu kỳ
-          </span>
           <div className="bg-white rounded-xl p-6 min-h-full">
             <Outlet />
           </div>
