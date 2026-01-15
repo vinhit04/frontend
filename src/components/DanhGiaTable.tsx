@@ -2,7 +2,7 @@ import { Table, Tag, Button } from "antd";
 
 interface DanhGia {
   key: string;
-  info: string; 
+  info: string;
   name: string;
   start: string;
   end: string;
@@ -11,6 +11,168 @@ interface DanhGia {
 }
 
 const data: DanhGia[] = [
+  {
+    key: "1",
+    info: "Đánh giá định kỳ",
+    name: "Đánh giá tuần 1–2",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
+  {
+    key: "1",
+    info: "Đánh giá định kỳ",
+    name: "Đánh giá tuần 1–2",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
+  {
+    key: "1",
+    info: "Đánh giá định kỳ",
+    name: "Đánh giá tuần 1–2",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
+  {
+    key: "1",
+    info: "Đánh giá định kỳ",
+    name: "Đánh giá tuần 1–2",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
+  {
+    key: "1",
+    info: "Đánh giá định kỳ",
+    name: "Đánh giá tuần 1–2",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
+  {
+    key: "1",
+    info: "Đánh giá định kỳ",
+    name: "Đánh giá tuần 1–2",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
+  {
+    key: "1",
+    info: "Đánh giá định kỳ",
+    name: "Đánh giá tuần 1–2",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
+  {
+    key: "1",
+    info: "Đánh giá định kỳ",
+    name: "Đánh giá tuần 1–2",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
+  {
+    key: "1",
+    info: "Đánh giá định kỳ",
+    name: "Đánh giá tuần 1–2",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
   {
     key: "1",
     info: "Đánh giá định kỳ",
@@ -39,8 +201,11 @@ const statusColor: Record<string, string> = {
 
 export default function DanhGiaTable() {
   return (
-    <Table<DanhGia>
+    <Table
       pagination={false}
+      dataSource={data}
+      scroll={{ y: 400, x: 0 }}
+      style={{ width: '100%' }}
       columns={[
         {
           title: "Thông tin chung",
@@ -72,7 +237,6 @@ export default function DanhGiaTable() {
           render: () => <Button type="link">Chi tiết</Button>,
         },
       ]}
-      dataSource={data}
     />
   );
 }

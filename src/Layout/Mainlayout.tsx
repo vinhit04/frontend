@@ -15,6 +15,7 @@ export default function MainLayout() {
           <Header />
         </header>
         <main className="flex-1 p-6 overflow-auto">
+          <h1 className="text-xl font-semibold mb-4">Đánh giá</h1>
           <div className="bg-white rounded-xl p-6 min-h-full">
             <Outlet />
           </div>
