@@ -1,0 +1,149 @@
+{
+    "students": [
+      {
+        "id": 1,
+        "ma": "SV001",
+        "ten": "Nguyễn Văn An",
+        "diem": 8.5,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-05"
+      },
+      {
+        "id": 2,
+        "ma": "SV002",
+        "ten": "Trần Thị Bình",
+        "diem": 7.0,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-06"
+      },
+      {
+        "id": 3,
+        "ma": "SV003",
+        "ten": "Lê Quốc Cường",
+        "diem": null,
+        "trangThaiChamDiem": "Chưa chấm",
+        "ngayChamDiem": null
+      },
+      {
+        "id": 4,
+        "ma": "SV004",
+        "ten": "Phạm Minh Đức",
+        "diem": 9.2,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-07"
+      },
+      {
+        "id": 5,
+        "ma": "SV005",
+        "ten": "Hoàng Thị Em",
+        "diem": 6.8,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-07"
+      },
+      {
+        "id": 6,
+        "ma": "SV006",
+        "ten": "Vũ Thanh Hải",
+        "diem": null,
+        "trangThaiChamDiem": "Chưa chấm",
+        "ngayChamDiem": null
+      },
+      {
+        "id": 7,
+        "ma": "SV007",
+        "ten": "Đặng Ngọc Hân",
+        "diem": 8.0,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-08"
+      },
+      {
+        "id": 8,
+        "ma": "SV008",
+        "ten": "Nguyễn Quốc Huy",
+        "diem": 5.9,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-08"
+      },
+      {
+        "id": 9,
+        "ma": "SV009",
+        "ten": "Trịnh Thị Lan",
+        "diem": null,
+        "trangThaiChamDiem": "Chưa chấm",
+        "ngayChamDiem": null
+      },
+      {
+        "id": 10,
+        "ma": "SV010",
+        "ten": "Bùi Đức Long",
+        "diem": 7.5,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-09"
+      },
+      {
+        "id": 11,
+        "ma": "SV011",
+        "ten": "Phan Thị Mai",
+        "diem": 9.0,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-09"
+      },
+      {
+        "id": 12,
+        "ma": "SV012",
+        "ten": "Ngô Quang Nam",
+        "diem": 4.8,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-10"
+      },
+      {
+        "id": 13,
+        "ma": "SV013",
+        "ten": "Lý Thị Oanh",
+        "diem": null,
+        "trangThaiChamDiem": "Chưa chấm",
+        "ngayChamDiem": null
+      },
+      {
+        "id": 14,
+        "ma": "SV014",
+        "ten": "Đỗ Minh Phúc",
+        "diem": 6.2,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-10"
+      },
+      {
+        "id": 15,
+        "ma": "SV015",
+        "ten": "Nguyễn Thị Quỳnh",
+        "diem": 8.7,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-11"
+      },
+      {
+        "id": 16,
+        "ma": "SV016",
+        "ten": "Hồ Văn Sơn",
+        "diem": null,
+        "trangThaiChamDiem": "Chưa chấm",
+        "ngayChamDiem": null
+      },
+      {
+        "id": 17,
+        "ma": "SV017",
+        "ten": "Mai Thanh Tùng",
+        "diem": 7.9,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-11"
+      },
+      {
+        "id": 18,
+        "ma": "SV018",
+        "ten": "Trần Ngọc Vân",
+        "diem": 5.5,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-12"
+      }
+    ]
+  }
+  

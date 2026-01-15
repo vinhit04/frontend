@@ -1,10 +1,10 @@
 
-import { Layout } from 'antd';
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
 export default function MainLayout() {
+
   return (
     <div className="flex h-screen bg-gray-100 overflow-hidden">
       <aside className="w-64 bg-slate-800 text-white shadow-lg">
