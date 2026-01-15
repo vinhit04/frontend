@@ -4,6 +4,11 @@ import { Card, Button } from "antd";
 const ReviewDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const fetchData = async () => {
+    const response = await fetch(`/api/review-cycles/${id}`);
+    const data = await response.json();
+    return data;
+  }
 
   return (
     <div className="p-6 space-y-6">
@@ -14,6 +19,7 @@ const ReviewDetail: React.FC = () => {
       <h2 className="text-2xl font-semibold">Chi tiết chu kỳ #{id}</h2>
 
       <Card title="Thông tin chung">Nội dung chi tiết chu kỳ</Card>
+      
     </div>
   );
 };
