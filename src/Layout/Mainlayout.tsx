@@ -1,10 +1,7 @@
-
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-
 export default function MainLayout() {
-
   return (
     <div className="flex h-screen bg-gray-100 overflow-hidden">
       <aside className="w-64 bg-slate-800 text-white shadow-lg">
@@ -15,11 +12,7 @@ export default function MainLayout() {
           <Header />
         </header>
         <main className="flex-1 p-6 overflow-auto">
-          <span className="text-xl font-semibold mb-4">Đánh giá
-          </span>
-          <div className="bg-white rounded-xl p-6 min-h-full">
-            <Outlet />
-          </div>
+          <Outlet />
         </main>
       </div>
     </div>
