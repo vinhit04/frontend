@@ -1,5 +1,5 @@
 import { Table, Tag, Button } from "antd";
-
+import { useNavigate } from "react-router-dom";
 interface DanhGia {
   key: string;
   info: string;
@@ -30,9 +30,36 @@ const data: DanhGia[] = [
     total: 20,
   },
   {
-    key: "1",
-    info: "Đánh giá định kỳ",
-    name: "Đánh giá tuần 1–2",
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đang diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Đã kết thúc",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
+    start: "01/01/2025",
+    end: "01/01/2025",
+    status: "Sắp diễn ra",
+    total: 20,
+  },
+  {
+    key: "2",
+    info: "Đánh giá giữa kỳ",
+    name: "Đánh giá giữa kỳ",
     start: "01/01/2025",
     end: "01/01/2025",
     status: "Sắp diễn ra",
@@ -48,158 +75,22 @@ const data: DanhGia[] = [
     total: 20,
   },
   {
-    key: "1",
-    info: "Đánh giá định kỳ",
-    name: "Đánh giá tuần 1–2",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Sắp diễn ra",
-    total: 20,
-  },
-  {
     key: "2",
     info: "Đánh giá giữa kỳ",
     name: "Đánh giá giữa kỳ",
     start: "01/01/2025",
     end: "01/01/2025",
-    status: "Đang diễn ra",
-    total: 20,
-  },
-  {
-    key: "1",
-    info: "Đánh giá định kỳ",
-    name: "Đánh giá tuần 1–2",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Sắp diễn ra",
-    total: 20,
-  },
-  {
-    key: "2",
-    info: "Đánh giá giữa kỳ",
-    name: "Đánh giá giữa kỳ",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Đang diễn ra",
-    total: 20,
-  },
-  {
-    key: "1",
-    info: "Đánh giá định kỳ",
-    name: "Đánh giá tuần 1–2",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Sắp diễn ra",
-    total: 20,
-  },
-  {
-    key: "2",
-    info: "Đánh giá giữa kỳ",
-    name: "Đánh giá giữa kỳ",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Đang diễn ra",
-    total: 20,
-  },
-  {
-    key: "1",
-    info: "Đánh giá định kỳ",
-    name: "Đánh giá tuần 1–2",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Sắp diễn ra",
-    total: 20,
-  },
-  {
-    key: "2",
-    info: "Đánh giá giữa kỳ",
-    name: "Đánh giá giữa kỳ",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Đang diễn ra",
-    total: 20,
-  },
-  {
-    key: "1",
-    info: "Đánh giá định kỳ",
-    name: "Đánh giá tuần 1–2",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Sắp diễn ra",
-    total: 20,
-  },
-  {
-    key: "2",
-    info: "Đánh giá giữa kỳ",
-    name: "Đánh giá giữa kỳ",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Đang diễn ra",
-    total: 20,
-  },
-  {
-    key: "1",
-    info: "Đánh giá định kỳ",
-    name: "Đánh giá tuần 1–2",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Sắp diễn ra",
-    total: 20,
-  },
-  {
-    key: "2",
-    info: "Đánh giá giữa kỳ",
-    name: "Đánh giá giữa kỳ",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Đang diễn ra",
-    total: 20,
-  },
-  {
-    key: "1",
-    info: "Đánh giá định kỳ",
-    name: "Đánh giá tuần 1–2",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Sắp diễn ra",
-    total: 20,
-  },
-  {
-    key: "2",
-    info: "Đánh giá giữa kỳ",
-    name: "Đánh giá giữa kỳ",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Đang diễn ra",
-    total: 20,
-  },
-  {
-    key: "1",
-    info: "Đánh giá định kỳ",
-    name: "Đánh giá tuần 1–2",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Sắp diễn ra",
-    total: 20,
-  },
-  {
-    key: "2",
-    info: "Đánh giá giữa kỳ",
-    name: "Đánh giá giữa kỳ",
-    start: "01/01/2025",
-    end: "01/01/2025",
-    status: "Đang diễn ra",
+    status: "Đã kết thúc",
     total: 20,
   },
 ];
-
 const statusColor: Record<string, string> = {
   "Sắp diễn ra": "orange",
   "Đang diễn ra": "green",
   "Đã kết thúc": "red",
 };
-
 export default function DanhGiaTable() {
+  const navigate = useNavigate();
   return (
     <Table
       pagination={false}
@@ -207,10 +98,6 @@ export default function DanhGiaTable() {
       scroll={{ y: 400, x: 0 }}
       style={{ width: '100%' }}
       columns={[
-        {
-          title: "Thông tin chung",
-          dataIndex: "info",
-        },
         {
           title: "Tên chu kỳ",
           dataIndex: "name",
@@ -237,6 +124,13 @@ export default function DanhGiaTable() {
           render: () => <Button type="link">Chi tiết</Button>,
         },
       ]}
+      onRow={(record) => {
+        return {
+          onClick: () => {
+            navigate(`/evaluate/${record.key}`);
+          },
+        };
+      }}
     />
   );
 }
