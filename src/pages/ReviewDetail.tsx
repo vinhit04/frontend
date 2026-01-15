@@ -16,8 +16,7 @@ const ReviewDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
-
-  const fetchData = async () => {
+    const fetchData = async () => {
     const response = await fetch(`/api/review-cycles/${id}`);
     const data = await response.json();
     return data;
@@ -109,7 +108,6 @@ const ReviewDetail: React.FC = () => {
       ),
     },
   ];
-
   return (
     <div className="p-6 space-y-6">
       <Button type="link" onClick={() => navigate(-1)}>
@@ -143,4 +141,3 @@ const ReviewDetail: React.FC = () => {
 };
 
 export default ReviewDetail;
-
