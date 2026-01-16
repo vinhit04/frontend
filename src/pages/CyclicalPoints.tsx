@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 type Props = {}
 
 const CyclicalPoints = (props: Props) => {
+   
     const columns = [
         {
             title: "Tên tiêu chí",
@@ -142,7 +143,7 @@ const CyclicalPoints = (props: Props) => {
             </Card>
             <Card style={{ marginBottom: '30px' }}>
                 <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-4">
                         <Progress
                             type="circle"
                             percent={92}
