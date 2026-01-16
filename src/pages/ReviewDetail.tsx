@@ -12,27 +12,8 @@ interface Student {
   trangThaiChamDiem: string;
   ngayChamDiem: string | null;
 }
-
 const ReviewDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  // const [checkAll, setCheckAll] = useState(false);
-  // const handleCheckAll = () => {
-  //   setCheckAll(!checkAll);
-  //   if (handleChangeCheckbox) {
-  //     handleChangeCheckbox(!checkAll)
-  //   }
-  // }
-  // useEffect(() => {
-  //   let _check = rows?.filter((x) => x?.isCheck)
-  //   if (_check.length === rows.length && rows.length > 0) {
-  //     setCheckAll(true)
-  //   } else {
-  //     setCheckAll(false)
-  //   }
-  // }, [rows])
-  // return (
-  //   <CheckboxMUI defaultValue={checkAll} onChange={() => handleCheckAll()} sx={{ bgcolor: '#fff', p: 0 }} />
-  // )
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
   const [checkAll, setCheckAll] = useState(false)
@@ -66,13 +47,6 @@ const ReviewDetail: React.FC = () => {
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`)
   }
-<<<<<<< HEAD
-
-=======
-  // const handleCheck = (data: any) => {
-  //   console.log("data", data)
-  // }
->>>>>>> 2d4a43423982cf8be145f04164a4e82d8e35a766
   const handleCheck = useCallback((data: any, value: any) => {
     setListStudent((prev) => prev.map((x: any) => (x.id === data.id) ? { ...x, isCheck: value } : x))
   }, [])
@@ -89,12 +63,8 @@ const ReviewDetail: React.FC = () => {
   const columns = [
     {
       title: () => (<Checkbox checked={checkAll} onChange={(e) => handleCheckAll(e)} />),
-<<<<<<< HEAD
-      render: (record: any) =><Checkbox checked={record.isCheck ?? false} onChange={(e) => handleCheck(record, e.target.checked)} /> 
-=======
       render: (record: any) =>
         <Checkbox checked={record.isCheck ?? false} onChange={(e) => handleCheck(record, e.target.checked)} />
->>>>>>> 2d4a43423982cf8be145f04164a4e82d8e35a766
     },
     {
       title: "Tên sinh viên",
