@@ -144,6 +144,22 @@
         "diem": 5.5,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-12"
+      },
+      {
+        "id": 19,
+        "ma": "SV019",
+        "ten": "Nguyễn Thị Nhung",
+        "diem": null,
+        "trangThaiChamDiem": "Chưa chấm",
+        "ngayChamDiem": null
+      },
+      {
+        "id": 20,
+        "ma": "SV020",
+        "ten": "Lê Văn Phú",
+        "diem": 8.3,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-12"
       }
     ]
   }

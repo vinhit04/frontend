@@ -1,5 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
+
 import { Card, Button, Table, Tag, Dropdown , Checkbox } from "antd";
+import { Card, Button, Table, Tag, Dropdown, Checkbox } from "antd";
+
 import { MoreOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 
@@ -44,6 +47,13 @@ const ReviewDetail: React.FC = () => {
     navigate(`cyclicalpoints/${value.id}`)
   }
   const columns = [
+    {
+      title: () => (<Checkbox  />),
+      dataIndex: "ten",
+      key: "ten",
+      render: () =>
+        <Checkbox />
+    },
     {
       title: "Tên sinh viên",
       dataIndex: "ten",
