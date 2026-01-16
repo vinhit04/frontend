@@ -131,7 +131,7 @@ export default function DanhGiaTable() {
                   onClick: () => navigate(`/evaluate/${data[0].key}`),
                 }]
               }}
-              trigger={["hover"]}
+              trigger={["click"]}
             >
               <MoreOutlined
                 style={{ fontSize: "20px", cursor: "pointer" }}
@@ -140,13 +140,13 @@ export default function DanhGiaTable() {
           ),
         },
       ]}
-      onRow={(record) => {
-        return {
-          onClick: () => {
-            navigate(`/evaluate/${record.key}`);
-          },
-        };
-      }}
+      // onRow={(record) => {
+      //   return {
+      //     onClick: () => {
+      //       navigate(`/evaluate/${record.key}`);
+      //     },
+      //   };
+      // }}
     />
   );
 }
