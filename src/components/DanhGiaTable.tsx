@@ -1,5 +1,5 @@
-import { EllipsisOutlined } from "@ant-design/icons";
-import { Table, Tag, Button, Dropdown } from "antd";
+import {  MoreOutlined } from "@ant-design/icons";
+import { Table, Tag, Dropdown } from "antd";
 import { useNavigate } from "react-router-dom";
 interface DanhGia {
   key: string;
@@ -125,10 +125,15 @@ export default function DanhGiaTable() {
           key: "detail",
           render: () => (
             <Dropdown
-              menu={{ items: [{ key: "1", label: "chi tiết" }] }}
-              trigger={["click"]}
+              menu={{
+                items: [{
+                  key: "1", label: "Chi tiết",
+                  onClick: () => navigate(`/evaluate/${data[0].key}`),
+                }]
+              }}
+              trigger={["hover"]}
             >
-              <EllipsisOutlined
+              <MoreOutlined
                 style={{ fontSize: "20px", cursor: "pointer" }}
               />
             </Dropdown>
