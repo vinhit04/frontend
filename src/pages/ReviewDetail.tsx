@@ -16,7 +16,7 @@ const ReviewDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
-    const fetchData = async () => {
+  const fetchData = async () => {
     const response = await fetch(`/api/review-cycles/${id}`);
     const data = await response.json();
     return data;
@@ -44,6 +44,9 @@ const ReviewDetail: React.FC = () => {
     }
   };
 
+  const handleXemDiem = (value: any) => {
+    navigate(`cyclicalpoints/${value.id}`)
+  }
   const columns = [
     {
       title: "Tên sinh viên",
@@ -77,7 +80,7 @@ const ReviewDetail: React.FC = () => {
       title: "",
       key: "action",
       width: 60,
-      render: () => (
+      render: (record: any) => (
         <Dropdown
           menu={{
             items: [
@@ -85,6 +88,7 @@ const ReviewDetail: React.FC = () => {
                 key: "view",
                 icon: <EyeOutlined />,
                 label: "Xem điểm",
+                onClick: () => handleXemDiem(record)
               },
               {
                 key: "score",
@@ -113,10 +117,10 @@ const ReviewDetail: React.FC = () => {
       {/* <Button type="link" onClick={() => navigate(-1)}>
         ← Trở lại
       </Button> */}
-      
+
       <span
         className=" text-sm cursor-pointer flex items-center gap-1" >
-        Đánh giá <span className="text-gray-400">{'>'}</span> chi tiết chu kỳ
+        Đánh giá <span className="text-gray-400">{'>'}</span> Chi tiết chu kỳ
       </span>
       <h1 className="text-2xl font-semibold">Chi tiết chu kỳ</h1>
 
