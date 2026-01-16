@@ -1,4 +1,5 @@
-import { Table, Tag, Button } from "antd";
+import { EllipsisOutlined } from "@ant-design/icons";
+import { Table, Tag, Button, Dropdown } from "antd";
 import { useNavigate } from "react-router-dom";
 interface DanhGia {
   key: string;
@@ -96,7 +97,7 @@ export default function DanhGiaTable() {
       pagination={false}
       dataSource={data}
       scroll={{ y: 400, x: 0 }}
-      style={{ width: '100%' }}
+      style={{ width: "100%" }}
       columns={[
         {
           title: "Tên chu kỳ",
@@ -121,7 +122,17 @@ export default function DanhGiaTable() {
         },
         {
           title: "",
-          render: () => <Button type="link">Chi tiết</Button>,
+          key: "detail",
+          render: () => (
+            <Dropdown
+              menu={{ items: [{ key: "1", label: "chi tiết" }] }}
+              trigger={["click"]}
+            >
+              <EllipsisOutlined
+                style={{ fontSize: "20px", cursor: "pointer" }}
+              />
+            </Dropdown>
+          ),
         },
       ]}
       onRow={(record) => {
