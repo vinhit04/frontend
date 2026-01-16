@@ -140,13 +140,6 @@ export default function DanhGiaTable() {
           ),
         },
       ]}
-      // onRow={(record) => {
-      //   return {
-      //     onClick: () => {
-      //       navigate(`/evaluate/${record.key}`);
-      //     },
-      //   };
-      // }}
     />
   );
 }

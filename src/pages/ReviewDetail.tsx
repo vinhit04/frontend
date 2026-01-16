@@ -110,10 +110,6 @@ const ReviewDetail: React.FC = () => {
   ];
   return (
     <div className="p-6 space-y-6">
-      {/* <Button type="link" onClick={() => navigate(-1)}>
-        ← Trở lại
-      </Button> */}
-      
       <span
         className=" text-sm cursor-pointer flex items-center gap-1" >
         Đánh giá <span className="text-gray-400">{'>'}</span> chi tiết chu kỳ
