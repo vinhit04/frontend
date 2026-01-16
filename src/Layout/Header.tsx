@@ -1,10 +1,9 @@
 import {
-  ArrowLeftOutlined,
   BellOutlined,
-  SettingOutlined,
+  SettingOutlined
 } from "@ant-design/icons";
 import { Avatar } from "antd";
-
+import avatar from "../images/Avatar.png";
 export default function Header() {
   return (
     <header className="h-14 bg-white flex items-center justify-between px-6 w-full">
@@ -13,7 +12,7 @@ export default function Header() {
       <div className="flex items-center gap-4">
         <SettingOutlined className="text-lg text-gray-600 cursor-pointer" />
         <BellOutlined className="text-lg text-gray-600 cursor-pointer" />
-        <Avatar size="small" src="../images/Avatar.png" />
+        <Avatar size="small" src={avatar} className="w-10 h-10" />
       </div>
     </header>
   );
