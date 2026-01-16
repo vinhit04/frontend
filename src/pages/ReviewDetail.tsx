@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, Button, Table, Tag, Dropdown, Checkbox } from "antd";
 import { MoreOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface Student {
   id: number;
@@ -14,8 +14,27 @@ interface Student {
 
 const ReviewDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  // const [checkAll, setCheckAll] = useState(false);
+  // const handleCheckAll = () => {
+  //   setCheckAll(!checkAll);
+  //   if (handleChangeCheckbox) {
+  //     handleChangeCheckbox(!checkAll)
+  //   }
+  // }
+  // useEffect(() => {
+  //   let _check = rows?.filter((x) => x?.isCheck)
+  //   if (_check.length === rows.length && rows.length > 0) {
+  //     setCheckAll(true)
+  //   } else {
+  //     setCheckAll(false)
+  //   }
+  // }, [rows])
+  // return (
+  //   <CheckboxMUI defaultValue={checkAll} onChange={() => handleCheckAll()} sx={{ bgcolor: '#fff', p: 0 }} />
+  // )
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
+  const [checkAll, setCheckAll] = useState(false)
   const fetchData = async () => {
     const response = await fetch(`/api/review-cycles/${id}`);
     const data = await response.json();
@@ -47,13 +66,27 @@ const ReviewDetail: React.FC = () => {
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`)
   }
+  // const handleCheck = (data: any) => {
+  //   console.log("data", data)
+  // }
+  const handleCheck = useCallback((data: any, value: any) => {
+    setListStudent((prev) => prev.map((x: any) => (x.id === data.id) ? { ...x, isCheck: value } : x))
+  }, [])
+  const handleCheckAll = (e: any) => {
+    const checked = e.target.checked;
+    setCheckAll(!checked)
+    if (handleCheck) {
+      handleCheck(!checkAll, null)
+    }
+    setListStudent(prev =>
+      prev.map(x => ({ ...x, isCheck: checked }))
+    );
+  }
   const columns = [
     {
-      title: () => (<Checkbox  />),
-      dataIndex: "ten",
-      key: "ten",
-      render: () =>
-        <Checkbox />
+      title: () => (<Checkbox checked={checkAll} onChange={(e) => handleCheckAll(e)} />),
+      render: (record: any) =>
+        <Checkbox checked={record.isCheck ?? false} onChange={(e) => handleCheck(record, e.target.checked)} />
     },
     {
       title: "Tên sinh viên",
@@ -119,6 +152,14 @@ const ReviewDetail: React.FC = () => {
       ),
     },
   ];
+  useEffect(() => {
+    let _check = listStudent.filter((x: any) => x.isCheck)
+    if (_check.length === listStudent.length && listStudent.length > 0) {
+      setCheckAll(true)
+    } else {
+      setCheckAll(false)
+    }
+  }, [listStudent])
   return (
     <div className="p-6 space-y-6">
       <span
