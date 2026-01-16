@@ -1,11 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
-
 import { Card, Button, Table, Tag, Dropdown , Checkbox } from "antd";
-import { Card, Button, Table, Tag, Dropdown, Checkbox } from "antd";
-
 import { MoreOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
-
 interface Student {
   checkbox : boolean;
   id: number;
@@ -42,7 +38,6 @@ const ReviewDetail: React.FC = () => {
         return <Tag>Không xác định</Tag>;
     }
   };
-
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`)
   }
