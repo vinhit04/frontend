@@ -167,7 +167,7 @@ const CyclicalPoints = (props: Props) => {
             <Progress
               type="circle"
               percent={percent}
-              strokeWidth={16}
+              strokeWidth={13}
               width={120}
               strokeColor="#4C59D9"
               showInfo={false}
