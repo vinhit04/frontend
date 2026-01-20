@@ -64,7 +64,7 @@ const ReviewDetail: React.FC = () => {
   };
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`)
-  }
+  };
   const handleCheck = useCallback((data: any, value: any) => {
     setListStudent((prev) => prev.map((x: any) => (x.id === data.id) ? { ...x, isCheck: value } : x))
   }, [])
