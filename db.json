@@ -1,7 +1,6 @@
 {
     "students": [
       {
-        "checkbox": false,
         "id": 1,
         "ma": "SV001",
         "ten": "Nguyễn Văn An",

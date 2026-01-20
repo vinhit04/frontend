@@ -118,7 +118,7 @@ const CyclicalPoints = (props: Props) => {
                         <div>
                             <span className="text-sm text-gray-500">Tên sinh viên</span>
                             <h2 className="text-lg font-semibold text-gray-800">
-                                Anh Dũng đẹp trai
+                                Tên sinh viên
                             </h2>
                         </div>
 
