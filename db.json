@@ -3,23 +3,23 @@
       {
         "id": 1,
         "ma": "SV001",
-        "ten": "Nguyễn Văn An",
-        "diem": 8.5,
+        "ten": "Lý Mạc Sầu",
+        "diem": 85,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-05"
       },
       {
         "id": 2,
         "ma": "SV002",
-        "ten": "Trần Thị Bình",
-        "diem": 7.0,
+        "ten": "Dương Trung Quốc",
+        "diem": 70,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-06"
       },
       {
         "id": 3,
         "ma": "SV003",
-        "ten": "Lê Quốc Cường",
+        "ten": "Đặng Đằng Tân Nhất",
         "diem": null,
         "trangThaiChamDiem": "Chưa chấm",
         "ngayChamDiem": null
@@ -27,23 +27,23 @@
       {
         "id": 4,
         "ma": "SV004",
-        "ten": "Phạm Minh Đức",
-        "diem": 9.2,
+        "ten": "Trần Hạo Nam",
+        "diem": 92,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-07"
       },
       {
         "id": 5,
         "ma": "SV005",
-        "ten": "Hoàng Thị Em",
-        "diem": 6.8,
+        "ten": "Hoàng Hoa Tranh",
+        "diem": 68,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-07"
       },
       {
         "id": 6,
         "ma": "SV006",
-        "ten": "Vũ Thanh Hải",
+        "ten": "Lý Điêu Thuyền",
         "diem": null,
         "trangThaiChamDiem": "Chưa chấm",
         "ngayChamDiem": null
@@ -52,22 +52,22 @@
         "id": 7,
         "ma": "SV007",
         "ten": "Đặng Ngọc Hân",
-        "diem": 8.0,
+        "diem": 80,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-08"
       },
       {
         "id": 8,
         "ma": "SV008",
-        "ten": "Nguyễn Quốc Huy",
-        "diem": 5.9,
+        "ten": "Phạm Hoa Linh",
+        "diem": 59,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-08"
       },
       {
         "id": 9,
         "ma": "SV009",
-        "ten": "Trịnh Thị Lan",
+        "ten": "Trịnh Mai Linh",
         "diem": null,
         "trangThaiChamDiem": "Chưa chấm",
         "ngayChamDiem": null
@@ -75,31 +75,31 @@
       {
         "id": 10,
         "ma": "SV010",
-        "ten": "Bùi Đức Long",
-        "diem": 7.5,
+        "ten": "Đặng Thị Tranh Hoa",
+        "diem": 75,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-09"
       },
       {
         "id": 11,
         "ma": "SV011",
-        "ten": "Phan Thị Mai",
-        "diem": 9.0,
+        "ten": "Võ Đô Quảng",
+        "diem": 90,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-09"
       },
       {
         "id": 12,
         "ma": "SV012",
-        "ten": "Ngô Quang Nam",
-        "diem": 4.8,
+        "ten": "Ngô Quan Chưởng",
+        "diem": 48,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-10"
       },
       {
         "id": 13,
         "ma": "SV013",
-        "ten": "Lý Thị Oanh",
+        "ten": "Trịnh Kiều Trinh",
         "diem": null,
         "trangThaiChamDiem": "Chưa chấm",
         "ngayChamDiem": null
@@ -108,22 +108,22 @@
         "id": 14,
         "ma": "SV014",
         "ten": "Đỗ Minh Phúc",
-        "diem": 6.2,
+        "diem": 62,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-10"
       },
       {
         "id": 15,
         "ma": "SV015",
-        "ten": "Nguyễn Thị Quỳnh",
-        "diem": 8.7,
+        "ten": "Nguyễn Thanh Quỳnh",
+        "diem": 87,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-11"
       },
       {
         "id": 16,
         "ma": "SV016",
-        "ten": "Hồ Văn Sơn",
+        "ten": "Nguyễn Xuân Sơn",
         "diem": null,
         "trangThaiChamDiem": "Chưa chấm",
         "ngayChamDiem": null
@@ -132,7 +132,7 @@
         "id": 17,
         "ma": "SV017",
         "ten": "Mai Thanh Tùng",
-        "diem": 7.9,
+        "diem": 79,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-11"
       },
@@ -140,14 +140,14 @@
         "id": 18,
         "ma": "SV018",
         "ten": "Trần Ngọc Vân",
-        "diem": 5.5,
+        "diem": 55,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-12"
       },
       {
         "id": 19,
         "ma": "SV019",
-        "ten": "Nguyễn Thị Nhung",
+        "ten": "Nguyễn Thị Nhung Cao",
         "diem": null,
         "trangThaiChamDiem": "Chưa chấm",
         "ngayChamDiem": null
@@ -155,10 +155,90 @@
       {
         "id": 20,
         "ma": "SV020",
-        "ten": "Lê Văn Phú",
-        "diem": 8.3,
+        "ten": "Lưu Bình Nhưỡng",
+        "diem": 83,
         "trangThaiChamDiem": "Đã chấm",
         "ngayChamDiem": "2025-01-12"
+      },
+      {
+        "id": 21,
+        "ma": "SV021",
+        "ten": "Phạm Thị Hồng",
+        "diem": 91,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-13"
+      }
+      ,{
+        "id": 22,
+        "ma": "SV022",
+        "ten": "Nhan Thị Hạnh",
+        "diem": null,
+        "trangThaiChamDiem": "Chưa chấm",
+        "ngayChamDiem": null
+      },
+      {
+        "id": 23,
+        "ma": "SV023",
+        "ten": "Khuất Văn Khang",
+        "diem": 77,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-13"
+      }
+      ,{
+        "id": 24,
+        "ma": "SV024",
+        "ten": "Nguyễn Đình Bắc",
+        "diem": 100,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-14"
+      },
+      {
+        "id": 25,
+        "ma": "SV025",
+        "ten": "Phạm Lí Đức",
+        "diem": null,
+        "trangThaiChamDiem": "Chưa chấm",
+        "ngayChamDiem": null
+      },
+      {
+        "id": 26,
+        "ma": "SV026",
+        "ten": "Nguyễn Hiểu Minh",
+        "diem": 55,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-15"
+      },
+      {
+        "id": 27,
+        "ma": "SV027",
+        "ten": "Mộ Dung Phục",
+        "diem": 95,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-15"
+      },
+      {
+        "id": 28,
+        "ma": "SV028",
+        "ten": "Dương Quách Tĩnh",
+        "diem": 88,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-16"
+      },
+      {
+        "id": 29,
+        "ma": "SV029",
+        "ten": "Lý Nhạc Hòa",
+        "diem": null,
+        "trangThaiChamDiem": "Chưa chấm",
+        "ngayChamDiem": null
+      },
+      {
+        "id": 30,
+        "ma": "SV030",
+        "ten": "Dương Kiều Phong",
+        "diem": 80,
+        "trangThaiChamDiem": "Đã chấm",
+        "ngayChamDiem": "2025-01-17"
       }
     ]
   }

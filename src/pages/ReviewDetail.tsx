@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Card, Button, Table, Tag, Dropdown, Checkbox } from "antd";
 import { MoreOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
 import { useCallback, useEffect, useState } from "react";
-
+import React from "react";
 interface Student {
   checkbox : boolean;
   id: number;
@@ -17,17 +17,12 @@ const ReviewDetail: React.FC = () => {
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
   const [checkAll, setCheckAll] = useState(false)
-  const fetchData = async () => {
-    const response = await fetch(`/api/review-cycles/${id}`);
-    const data = await response.json();
-    return data;
-  }
+ 
   const getStudents = async () => {
     const res = await fetch("http://localhost:4000/students");
     const data = await res.json();
     setListStudent(data);
   };
-
   useEffect(() => {
     getStudents();
   }, []);

@@ -1,18 +1,19 @@
-import { Card, Progress, Table } from 'antd'
-import React, { useState } from 'react'
-
-type Props = {}
-
+import { IdentificationIcon } from "@heroicons/react/24/outline";
+import { Card, Progress, Table } from "antd";
+import { useEffect, useState } from "react";
+import React from "react";
+import { useParams } from "react-router-dom";
+type Props = {};
 const CyclicalPoints = (props: Props) => {
-   
+    const { id } = useParams<{ id: any }>();
+    const [student, setStudent] = useState<any>({});
+    console.log(id)
     const columns = [
         {
             title: "Tên tiêu chí",
             dataIndex: "name",
             key: "name",
-            render: (text: string) => (
-                <span className="font-medium">{text}</span>
-            ),
+            render: (text: string) => <span className="font-medium">{text}</span>,
         },
         {
             title: "Điểm trung bình",
@@ -97,129 +98,138 @@ const CyclicalPoints = (props: Props) => {
             ratio: 5,
         },
     ];
+    const getStudent = async (id: string) => {
+        const res = await fetch(`http://localhost:4000/students/${id}`);
+        const data = await res.json();
+        setStudent(data);
+        return data;
+    };
+    console.log("student", student);
 
     const [expandedRowKeys, setExpandedRowKeys] = useState<string[]>([]);
-    return (
+      const [percent, setPercent] = useState(0);
+
+      useEffect(() => {
+        if (student?.diem !== undefined) {
+          setTimeout(() => {
+            setPercent(student.diem * 10);
+          }, 1500);
+        }
+      }, [student]);
+    useEffect(()=> {getStudent(id)},[id])
+  return (
+    <div>
+      <span className=" text-sm cursor-pointer flex items-center gap-1">
+        Đánh giá <span className="text-gray-400">{">"}</span> Chi tiết chu kỳ
+        <span className="text-gray-400">{">"}</span> Chi tiết điểm theo chu kỳ
+      </span>
+      <h1 className="text-2xl font-semibold my-2">Chi tiết điểm theo chu kỳ</h1>
+
+      <Card style={{ marginBottom: "30px" }}>
         <div>
-            <span
-                className=" text-sm cursor-pointer flex items-center gap-1" >
-                Đánh giá <span className="text-gray-400">{'>'}</span> Chi tiết chu kỳ
-                <span className="text-gray-400">{'>'}</span> Chi tiết điểm theo chu kỳ
-            </span>
-            <h1 className="text-2xl font-semibold my-2">Chi tiết điểm theo chu kỳ</h1>
-
-            <Card style={{ marginBottom: '30px' }}>
-                <div>
-                    <h2 className="text-xl font-semibold text-gray-800 mb-3">
-                        Thông tin chung
-                    </h2>
-                    <div className="border-b border-gray-200 mb-4" />
-                    <div className="flex items-start gap-64">
-                        <div>
-                            <span className="text-sm text-gray-500">Tên sinh viên</span>
-                            <h2 className="text-lg font-semibold text-gray-800">
-                                Tên sinh viên
-                            </h2>
-                        </div>
-
-                        <div>
-                            <span className="text-sm text-gray-500">Chu ký đánh giá hiện tại</span>
-                            <h2 className="text-lg font-semibold text-gray-800">
-                                18/11/2025 - 18/11/2025
-                            </h2>
-                        </div>
-                        <div>
-                            <span className="text-sm text-gray-500 block mb-1">
-                                Bộ tiêu chí
-                            </span>
-                            <span>Đánh giá đợt 1</span>
-                            <span className=" inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
-                             text-purple-700 bg-purple-100">
-                                Global
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </Card>
-            <Card style={{ marginBottom: '30px' }}>
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                        <Progress
-                            type="circle"
-                            percent={92}
-                            strokeWidth={8}
-                            width={120}
-                            strokeColor="#4C59D9" 
-                        />
-
-                        <div>
-                            <p className="text-gray-500">Tổng điểm trung bình</p>
-                            <h2 className="text-3xl font-semibold text-[#4C59D9]">
-                                92/100
-                            </h2>
-
-                            <p className="text-gray-500 mt-2">Chu kỳ đánh giá:</p>
-                            <p className="font-medium">Đánh giá tuần 1-2</p>
-                        </div>
-                    </div>
-                    <div>
-                        <p className="text-gray-500 mb-1">Trạng thái:</p>
-                        <span
-                            className="inline-flex px-3 py-1 rounded-full bg-green-100 text-green-700 font-medium text-sm" >
-                            Đã hoàn thành
-                        </span>
-                    </div>
-
-                </div>
-            </Card>
-
-            <Card>
-                <h2 className="text-lg font-semibold mb-4">
-                    Điểm chi tiết
-                </h2>
-
-                <Table
-                    columns={columns}
-                    dataSource={dataSource}
-                    pagination={false}
-                    bordered
-                    expandable={{
-                        expandedRowRender: (record: any) => (
-                            <div className="pl-6">
-                                {record.detail.map((item: any, index: number) => (
-                                    <div
-                                        key={index}
-                                        className="border-l-4 border-black-500 pl-4 mb-3"
-                                    >
-                                        <p className="font-medium">
-                                            {item.teacher}:
-                                        </p>
-                                        <p className="text-gray-600">
-                                            {item.comment}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        ),
-                        expandIcon: () => null,
-                        expandedRowKeys,
-                        rowExpandable: (record) => record.detail?.length > 0,
-                    }}
-                    onRow={(record) => ({
-                        onClick: () => {
-                          const isExpanded = expandedRowKeys.includes(record.key);
-                          setExpandedRowKeys(
-                            isExpanded
-                              ? expandedRowKeys.filter((key) => key !== record.key)
-                              : [...expandedRowKeys, record.key]
-                          );
-                        },
-                      })}
-                />
-            </Card>
-
+          <h2 className="text-xl font-semibold text-gray-800 mb-3">
+            Thông tin chung
+          </h2>
+          <div className="border-b border-gray-200 mb-4" />
+          <div className="flex items-start gap-64">
+            <div>
+              <span className="text-sm text-gray-500">Tên sinh viên</span>
+                          <h2 className="text-lg font-semibold text-gray-800">
+                            {student?.ten}
+              </h2>
+            </div>
+            <div>
+              <span className="text-sm text-gray-500">
+                Chu ký đánh giá hiện tại
+              </span>
+              <h2 className="text-lg font-semibold text-gray-800">
+                18/11/2025 - 18/11/2025
+              </h2>
+            </div>
+            <div>
+              <span className="text-sm text-gray-500 block mb-1">
+                Bộ tiêu chí
+              </span>
+              <span>Đánh giá đợt 1</span>
+              <span
+                className=" inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
+                             text-purple-700 bg-purple-100"
+              >
+                Global
+              </span>
+            </div>
+          </div>
         </div>
-    )
-}
+      </Card>
+      <Card style={{ marginBottom: "30px" }}>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Progress
+              type="circle"
+              percent={percent}
+              strokeWidth={16}
+              width={120}
+              strokeColor="#4C59D9"
+              showInfo={false}
+            />
+            <div>
+              <p className="text-gray-500 mb-1">Tổng điểm trung bình:</p>
+                          <h2 className="text-3xl font-semibold text-[#4C59D9]">
+                {student?.diem * 10}/100
+              </h2>
+              <p className="text-gray-500 mt-2">Chu kỳ đánh giá:</p>
+              <p className="font-medium">Đánh giá tuần 1-2</p>
+            </div>
+          </div>
+          <div>
+            <p className="text-gray-500 mb-1">Trạng thái:</p>
+            <span className="inline-flex px-3 py-1 rounded-full bg-green-100 text-green-700 font-medium text-sm">
+              Đã hoàn thành
+            </span>
+          </div>
+        </div>
+      </Card>
 
-export default CyclicalPoints
+      <Card>
+        <h2 className="text-lg font-semibold mb-4">Điểm chi tiết</h2>
+
+        <Table
+          columns={columns}
+          dataSource={dataSource}
+          pagination={false}
+          bordered
+          expandable={{
+            expandedRowRender: (record: any) => (
+              <div className="pl-6">
+                {record.detail.map((item: any, index: number) => (
+                  <div
+                    key={index}
+                    className="border-l-4 border-black-500 pl-4 mb-3"
+                  >
+                    <p className="font-medium">{item.teacher}:</p>
+                    <p className="text-gray-600">{item.comment}</p>
+                  </div>
+                ))}
+              </div>
+            ),
+            expandIcon: () => null,
+            expandedRowKeys,
+            rowExpandable: (record) => record.detail?.length > 0,
+          }}
+          onRow={(record) => ({
+            onClick: () => {
+              const isExpanded = expandedRowKeys.includes(record.key);
+              setExpandedRowKeys(
+                isExpanded
+                  ? expandedRowKeys.filter((key) => key !== record.key)
+                  : [...expandedRowKeys, record.key],
+              );
+            },
+          })}
+        />
+      </Card>
+    </div>
+  );
+};
+
+export default CyclicalPoints;
