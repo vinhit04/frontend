@@ -73,6 +73,19 @@ const ReviewDetail: React.FC = () => {
       prev.map(x => ({ ...x, isCheck: checked }))
     );
   }
+  const handleCheck = useCallback((data: any, value: any) => {
+    setListStudent((prev) => prev.map((x: any) => (x.id === data.id) ? { ...x, isCheck: value } : x))
+  }, [])
+  const handleCheckAll = (e: any) => {
+    const checked = e.target.checked;
+    setCheckAll(!checked)
+    if (handleCheck) {
+      handleCheck(!checkAll, null)
+    }
+    setListStudent(prev =>
+      prev.map(x => ({ ...x, isCheck: checked }))
+    );
+  }
   const columns = [
     {
       title: () => (<Checkbox checked={checkAll} onChange={(e) => handleCheckAll(e)} />),
