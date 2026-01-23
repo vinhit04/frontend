@@ -17,7 +17,12 @@ const ReviewDetail: React.FC = () => {
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
   const [checkAll, setCheckAll] = useState(false)
- 
+  const fetchData = async () => {
+    const response = await fetch(`/api/review-cycles/${id}`);
+    const data = await response.json();
+    return data;
+  }
+
   const getStudents = async () => {
     const res = await fetch("http://localhost:4000/students");
     const data = await res.json();
@@ -42,6 +47,19 @@ const ReviewDetail: React.FC = () => {
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`)
   };
+  const handleCheck = useCallback((data: any, value: any) => {
+    setListStudent((prev) => prev.map((x: any) => (x.id === data.id) ? { ...x, isCheck: value } : x))
+  }, [])
+  const handleCheckAll = (e: any) => {
+    const checked = e.target.checked;
+    setCheckAll(!checked)
+    if (handleCheck) {
+      handleCheck(!checkAll, null)
+    }
+    setListStudent(prev =>
+      prev.map(x => ({ ...x, isCheck: checked }))
+    );
+  }
   const handleCheck = useCallback((data: any, value: any) => {
     setListStudent((prev) => prev.map((x: any) => (x.id === data.id) ? { ...x, isCheck: value } : x))
   }, [])
