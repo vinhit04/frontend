@@ -122,9 +122,9 @@ const AIAutoPoint = (props : Props) => {
      <div>
        <span className=" text-sm cursor-pointer flex items-center gap-1">
          Đánh giá <span className="text-gray-400">{">"}</span> Chi tiết chu kỳ
-         <span className="text-gray-400">{">"}</span> Chi tiết điểm theo chu kỳ
+         <span className="text-gray-400">{">"}</span>AI chấm điểm tự động
        </span>
-       <h1 className="text-2xl font-semibold my-2">Chi tiết điểm theo chu kỳ</h1>
+       <h1 className="text-2xl font-semibold my-2">AI chấm điểm tự động</h1>
  
        <Card style={{ marginBottom: "30px" }}>
          <div>

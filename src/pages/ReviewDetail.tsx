@@ -3,8 +3,9 @@ import { Card, Button, Table, Tag, Dropdown, Checkbox } from "antd";
 import { MoreOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
 import { useCallback, useEffect, useState } from "react";
 import React from "react";
+import AIAutoPoint from "./AIAutoPoint";
 interface Student {
-  checkbox : boolean;
+  checkbox: boolean;
   id: number;
   ten: string;
   ma: string;
@@ -16,12 +17,12 @@ const ReviewDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
-  const [checkAll, setCheckAll] = useState(false)
+  const [checkAll, setCheckAll] = useState(false);
   const fetchData = async () => {
     const response = await fetch(`/api/review-cycles/${id}`);
     const data = await response.json();
     return data;
-  }
+  };
 
   const getStudents = async () => {
     const res = await fetch("http://localhost:4000/students");
@@ -44,27 +45,36 @@ const ReviewDetail: React.FC = () => {
         return <Tag>Không xác định</Tag>;
     }
   };
+  const handleAIAutoPoint = (value: any) => {
+    navigate(`aiautopoint/${value.id}`);
+  };
   const handleXemDiem = (value: any) => {
-    navigate(`cyclicalpoints/${value.id}`)
+    navigate(`cyclicalpoints/${value.id}`);
   };
   const handleCheck = useCallback((data: any, value: any) => {
-    setListStudent((prev) => prev.map((x: any) => (x.id === data.id) ? { ...x, isCheck: value } : x))
-  }, [])
+    setListStudent((prev) =>
+      prev.map((x: any) => (x.id === data.id ? { ...x, isCheck: value } : x)),
+    );
+  }, []);
   const handleCheckAll = (e: any) => {
     const checked = e.target.checked;
-    setCheckAll(!checked)
+    setCheckAll(!checked);
     if (handleCheck) {
-      handleCheck(!checkAll, null)
+      handleCheck(!checkAll, null);
     }
-    setListStudent(prev =>
-      prev.map(x => ({ ...x, isCheck: checked }))
-    );
-  }
+    setListStudent((prev) => prev.map((x) => ({ ...x, isCheck: checked })));
+  };
   const columns = [
     {
-      title: () => (<Checkbox checked={checkAll} onChange={(e) => handleCheckAll(e)} />),
-      render: (record: any) =>
-        <Checkbox checked={record.isCheck ?? false} onChange={(e) => handleCheck(record, e.target.checked)} />
+      title: () => (
+        <Checkbox checked={checkAll} onChange={(e) => handleCheckAll(e)} />
+      ),
+      render: (record: any) => (
+        <Checkbox
+          checked={record.isCheck ?? false}
+          onChange={(e) => handleCheck(record, e.target.checked)}
+        />
+      ),
     },
     {
       title: "Tên sinh viên",
@@ -106,7 +116,7 @@ const ReviewDetail: React.FC = () => {
                 key: "view",
                 icon: <EyeOutlined />,
                 label: "Xem điểm",
-                onClick: () => handleXemDiem(record)
+                onClick: () => handleXemDiem(record),
               },
               {
                 key: "score",
@@ -115,7 +125,8 @@ const ReviewDetail: React.FC = () => {
               },
               {
                 key: "ai",
-                label: "AI chấm điểm tự động",
+                label: "AI chấm điểm tự động ",
+                onClick: () => handleAIAutoPoint(record),
               },
               {
                 key: "edit",
@@ -131,22 +142,21 @@ const ReviewDetail: React.FC = () => {
     },
   ];
   useEffect(() => {
-    let _check = listStudent.filter((x: any) => x.isCheck)
+    let _check = listStudent.filter((x: any) => x.isCheck);
     if (_check.length === listStudent.length && listStudent.length > 0) {
-      setCheckAll(true)
+      setCheckAll(true);
     } else {
-      setCheckAll(false)
+      setCheckAll(false);
     }
-  }, [listStudent])
+  }, [listStudent]);
   return (
     <div className="p-6 space-y-6">
-      <span
-        className=" text-sm cursor-pointer flex items-center gap-1" >
-        Đánh giá <span className="text-gray-400">{'>'}</span> Chi tiết chu kỳ
+      <span className=" text-sm cursor-pointer flex items-center gap-1">
+        Đánh giá <span className="text-gray-400">{">"}</span> Chi tiết chu kỳ
       </span>
       <h1 className="text-2xl font-semibold">Chi tiết chu kỳ</h1>
 
-      <Card style={{ marginBottom: '30px' }}>
+      <Card style={{ marginBottom: "30px" }}>
         <div>
           <h2 className="text-xl font-semibold text-gray-800 mb-3">
             Thông tin chung
@@ -178,14 +188,11 @@ const ReviewDetail: React.FC = () => {
         </div>
       </Card>
 
-
       <Card className="">
         <div className="flex justify-between my-4">
-          <h2 className="text-xl font-semibold">
-            Danh sách sinh viên
-          </h2>
+          <h2 className="text-xl font-semibold">Danh sách sinh viên</h2>
           <div className="flex gap-2">
-            <Button type="default">AI chấm điểm hàng loạt</Button>
+            <Button >AI chấm điểm hàng loạt</Button>
             <Button type="default">Chấm điểm hàng loạt</Button>
             <Button type="primary" danger>
               Import điểm

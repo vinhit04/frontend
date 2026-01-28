@@ -2,6 +2,7 @@ import CyclicalPoints from "../pages/CyclicalPoints";
 import DanhGia from "../pages/DanhGia";
 import NotFound from "../pages/NotFound";
 import ReviewDetail from "../pages/ReviewDetail";
+import AIAutoPoint from "../pages/AIAutoPoint";
 
 export const routes = [
   {
@@ -19,5 +20,9 @@ export const routes = [
   {
     path: "*",
     element: <NotFound />
+  },
+  {
+    path: "/evaluate/:id/aiautopoint/:id",
+    element: <AIAutoPoint />
   }
 ];
