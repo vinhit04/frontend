@@ -3,8 +3,6 @@ import { Card, Button, Table, Tag, Dropdown, Checkbox } from "antd";
 import { MoreOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
 import { useCallback, useEffect, useState } from "react";
 import React from "react";
-import AIAutoPoint from "../pages/AIAutoPoint";
-import RankPoint from "../components/RankPoint";
 interface Student {
   checkbox: boolean;
   id: number;
@@ -51,7 +49,7 @@ const ReviewDetail: React.FC = () => {
   };
   const handleRankPoint = (value: any) => {
     navigate(`rankpoint/${value.id}`);
-  }
+  };
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`);
   };
@@ -197,7 +195,7 @@ const ReviewDetail: React.FC = () => {
         <div className="flex justify-between my-4">
           <h2 className="text-xl font-semibold">Danh sách sinh viên</h2>
           <div className="flex gap-2">
-            <Button >AI chấm điểm hàng loạt</Button>
+            <Button>AI chấm điểm hàng loạt</Button>
             <Button type="default">Chấm điểm hàng loạt</Button>
             <Button type="primary" danger>
               Import điểm
