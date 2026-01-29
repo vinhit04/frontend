@@ -3,7 +3,8 @@ import { Card, Button, Table, Tag, Dropdown, Checkbox } from "antd";
 import { MoreOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
 import { useCallback, useEffect, useState } from "react";
 import React from "react";
-import AIAutoPoint from "./AIAutoPoint";
+import AIAutoPoint from "../pages/AIAutoPoint";
+import RankPoint from "../components/RankPoint";
 interface Student {
   checkbox: boolean;
   id: number;
@@ -48,6 +49,9 @@ const ReviewDetail: React.FC = () => {
   const handleAIAutoPoint = (value: any) => {
     navigate(`aiautopoint/${value.id}`);
   };
+  const handleRankPoint = (value: any) => {
+    navigate(`rankpoint/${value.id}`);
+  }
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`);
   };
@@ -122,6 +126,7 @@ const ReviewDetail: React.FC = () => {
                 key: "score",
                 icon: <EditOutlined />,
                 label: "Chấm điểm",
+                onClick: () => handleRankPoint(record),
               },
               {
                 key: "ai",

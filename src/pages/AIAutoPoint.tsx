@@ -3,7 +3,7 @@ import React from 'react';
 import { } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Card, Progress, Table } from 'antd';
+import { Button, Card, Progress, Table} from 'antd';
 type Props = {};
 const AIAutoPoint = (props : Props) => {
      const { id } = useParams<{ id: any }>();
@@ -125,7 +125,7 @@ const AIAutoPoint = (props : Props) => {
          <span className="text-gray-400">{">"}</span>AI chấm điểm tự động
        </span>
        <h1 className="text-2xl font-semibold my-2">AI chấm điểm tự động</h1>
- 
+
        <Card style={{ marginBottom: "30px" }}>
          <div>
            <h2 className="text-xl font-semibold text-gray-800 mb-3">
@@ -135,8 +135,8 @@ const AIAutoPoint = (props : Props) => {
            <div className="flex items-start gap-64">
              <div>
                <span className="text-sm text-gray-500">Tên sinh viên</span>
-                           <h2 className="text-lg font-semibold text-gray-800">
-                             {student?.ten}
+               <h2 className="text-lg font-semibold text-gray-800">
+                 {student?.ten}
                </h2>
              </div>
              <div>
@@ -175,7 +175,7 @@ const AIAutoPoint = (props : Props) => {
              />
              <div>
                <p className="text-gray-500 mb-1">Tổng điểm trung bình:</p>
-                           <h2 className="text-3xl font-semibold text-[#4C59D9]">
+               <h2 className="text-3xl font-semibold text-[#4C59D9]">
                  {student?.diem * 10}/100
                </h2>
                <p className="text-gray-500 mt-2">Chu kỳ đánh giá:</p>
@@ -190,10 +190,9 @@ const AIAutoPoint = (props : Props) => {
            </div>
          </div>
        </Card>
- 
+
        <Card>
          <h2 className="text-lg font-semibold mb-4">Điểm chi tiết</h2>
- 
          <Table
            columns={columns}
            dataSource={dataSource}
@@ -229,6 +228,39 @@ const AIAutoPoint = (props : Props) => {
            })}
          />
        </Card>
+       <div className="flex mt-4 gap-4">
+         <div className="bg-white p-4 rounded-2xl">
+           <h2 className="text-xl font-semibold mt-6 mb-4 pb-4 border-b-2 border-gray-400">
+             Gợi ý cải thiện
+           </h2>
+           <div className="mt-4">
+             Lorem ipsum dolor sit amet consectetur. Diam sapien egestas
+             volutpat pharetra eget. Nulla sed ac ut ullamcorper. Fringilla
+             aliquam amet sed laoreet elit mattis dignissim pharetra pharetra.
+           </div>
+         </div>
+         <div className="bg-white p-4 rounded-2xl">
+           <h2 className="text-xl font-semibold mt-6 mb-4 pb-4 border-b-2 border-gray-400">
+             So sánh với chu kỳ trước
+           </h2>
+           <div className="mt-4">
+             Lorem ipsum dolor sit amet consectetur. Diam sapien egestas
+             volutpat pharetra eget. Nulla sed ac ut ullamcorper. Fringilla
+             aliquam amet sed laoreet elit mattis dignissim pharetra pharetra.
+           </div>
+         </div>
+       </div>
+       <div className="flex justify-end gap-4 mt-6">
+       <button className="bg-gray-50 rounded-2xl py-2 px-4 text-gray-700 ">
+         Chỉnh sửa thông tin
+       </button>
+        <button className="bg-red-50 rounded-2xl py-2 px-4 text-red-700">
+         Từ chối
+       </button>
+        <button className="bg-blue-50 rounded-2xl py-2 px-4 text-blue-700">
+         Chấp nhận
+         </button>
+         </div>
      </div>
    );
  };
