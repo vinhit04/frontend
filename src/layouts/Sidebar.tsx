@@ -12,33 +12,55 @@ import { Menu } from "antd";
 import logo from '../images/Logo.png';
 import { useNavigate } from "react-router-dom";
 export const menuItems = [
-  { key: "space", icon: <AppstoreOutlined />, url: '/space', label: "Space" },
   {
     key: "project", icon: <FolderOutlined />,
     url: '/project',
-    label: "Dự án"
+    label: "Dự án",
+    children: [
+      { key: "space", icon: <AppstoreOutlined />, url: '/space', label: "Space" },
+      { key: "projectinfo", icon: <AppstoreOutlined />, url: '/projectinfo', label: "Thông tin dự án" },
+    ]
   },
   {
-    key: "info",
-    icon: <InfoCircleOutlined />,
-    url: '/info',
-    label: "Thông tin chung",
+    key: "praticegroup", icon: <FolderOutlined />,
+    url: '/praticegroup',
+    label: "Nhóm thực tập",
+    children: [
+      {
+        key: "info",
+        icon: <InfoCircleOutlined />,
+        url: '/info',
+        label: "Thông tin nhóm",
+      },
+      { key: "student", icon: <TeamOutlined />, url: '/praticegroup/student', label: "Sinh viên" },
+      {
+        key: "daily-report",
+        icon: <FileDoneOutlined />,
+        url: '/report',
+        label: "Báo cáo hằng ngày",
+      },
+      {
+        key: "evaluation",
+        icon: <FileTextOutlined />,
+        url: '/evaluate',
+        label: "Đánh giá"
+      },
+      { key: "benlienquan", icon: <WarningOutlined />, url: '/benlienquan', label: "Bên liên quan" },
+      { key: "violation", icon: <WarningOutlined />, url: '/violation', label: "Vi phạm" },
+    ]
   },
-  { key: "student", icon: <TeamOutlined />, url: '/student', label: "Sinh viên" },
-  {
-    key: "daily-report",
-    icon: <FileDoneOutlined />,
-    url: '/report',
-    label: "Báo cáo hằng ngày",
-  },
-  {
-    key: "evaluation",
-    icon: <FileTextOutlined />,
-    url: '/evaluate',
-    label: "Đánh giá"
-  },
-  { key: "violation", icon: <WarningOutlined />, url: '/violation', label: "Vi phạm" },
+
 ]
+const findMenuItemByKey: any = (items: any, key: any) => {
+  for (const item of items) {
+    if (item.key === key) return item;
+    if (item.children) {
+      const found = findMenuItemByKey(item.children, key);
+      if (found) return found;
+    }
+  }
+  return null;
+};
 export default function Sidebar() {
   const navigate = useNavigate()
 
@@ -61,8 +83,10 @@ export default function Sidebar() {
         className="border-none"
         items={menuItems}
         onClick={({ key }) => {
-          const item = menuItems.find(i => i.key === key);
-          if (item?.url) navigate(item.url);
+          const item = findMenuItemByKey(menuItems, key);
+          if (item?.url) {
+            navigate(item.url);
+          }
         }}
       />
     </aside>
