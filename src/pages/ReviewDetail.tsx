@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, Button, Table, Tag, Dropdown, Checkbox } from "antd";
 import { MoreOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
 import { useCallback, useEffect, useState } from "react";
 import React from "react";
+=======
+import { EditOutlined, EyeOutlined, MoreOutlined } from "@ant-design/icons";
+import { Button, Card, Checkbox, Dropdown, Table, Tag } from "antd";
+import React, { useCallback, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import RankPoint from "./RankPoint";
+>>>>>>> 07cdfa1479aa2a2d294ebdd1de76df874ef50468
 interface Student {
   checkbox: boolean;
   id: number;
@@ -17,6 +25,7 @@ const ReviewDetail: React.FC = () => {
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
   const [checkAll, setCheckAll] = useState(false);
+  const [dialog, setDialog] = useState(false)
   const fetchData = async () => {
     const response = await fetch(`/api/review-cycles/${id}`);
     const data = await response.json();
@@ -48,8 +57,14 @@ const ReviewDetail: React.FC = () => {
     navigate(`aiautopoint/${value.id}`);
   };
   const handleRankPoint = (value: any) => {
+<<<<<<< HEAD
     navigate(`rankpoint/${value.id}`);
   };
+=======
+    // navigate(`rankpoint/${value.id}`);
+    setDialog(true)
+  }
+>>>>>>> 07cdfa1479aa2a2d294ebdd1de76df874ef50468
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`);
   };
@@ -210,6 +225,7 @@ const ReviewDetail: React.FC = () => {
           pagination={{ pageSize: 8 }}
         />
       </Card>
+      <RankPoint isModalOpen={dialog} setIsModalOpen={setDialog} />
     </div>
   );
 };
