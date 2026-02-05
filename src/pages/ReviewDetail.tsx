@@ -16,6 +16,7 @@ const ReviewDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
+  const [studentInfo,setStudentInfo] = useState()
   const [checkAll, setCheckAll] = useState(false);
   const [dialog, setDialog] = useState(false)
   const fetchData = async () => {
@@ -49,7 +50,7 @@ const ReviewDetail: React.FC = () => {
     navigate(`aiautopoint/${value.id}`);
   };
   const handleRankPoint = (value: any) => {
-    // navigate(`rankpoint/${value.id}`);
+    setStudentInfo(value)
     setDialog(true)
   }
   const handleXemDiem = (value: any) => {
@@ -212,7 +213,7 @@ const ReviewDetail: React.FC = () => {
           pagination={{ pageSize: 8 }}
         />
       </Card>
-      <RankPoint isModalOpen={dialog} setIsModalOpen={setDialog} />
+      <RankPoint isModalOpen={dialog} setIsModalOpen={setDialog} studentInfo={studentInfo} />
     </div>
   );
 };
