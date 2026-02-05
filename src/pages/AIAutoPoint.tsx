@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import React from 'react';
-import { } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Button, Card, Progress, Table} from 'antd';

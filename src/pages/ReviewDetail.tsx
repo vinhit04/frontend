@@ -16,8 +16,9 @@ const ReviewDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
+  const [studentInfo, setStudentInfo] = useState();
   const [checkAll, setCheckAll] = useState(false);
-  const [dialog, setDialog] = useState(false)
+  const [dialog, setDialog] = useState(false);
   const fetchData = async () => {
     const response = await fetch(`/api/review-cycles/${id}`);
     const data = await response.json();
@@ -49,9 +50,9 @@ const ReviewDetail: React.FC = () => {
     navigate(`aiautopoint/${value.id}`);
   };
   const handleRankPoint = (value: any) => {
-    // navigate(`rankpoint/${value.id}`);
-    setDialog(true)
-  }
+    setStudentInfo(value);
+    setDialog(true);
+  };
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`);
   };
@@ -192,11 +193,12 @@ const ReviewDetail: React.FC = () => {
           </div>
         </div>
       </Card>
+
       <Card className="">
         <div className="flex justify-between my-4">
           <h2 className="text-xl font-semibold">Danh sách sinh viên</h2>
           <div className="flex gap-2">
-            <Button >AI chấm điểm hàng loạt</Button>
+            <Button>AI chấm điểm hàng loạt</Button>
             <Button type="default">Chấm điểm hàng loạt</Button>
             <Button type="primary" danger>
               Import điểm
@@ -211,7 +213,11 @@ const ReviewDetail: React.FC = () => {
           pagination={{ pageSize: 8 }}
         />
       </Card>
-      <RankPoint isModalOpen={dialog} setIsModalOpen={setDialog} />
+      <RankPoint
+        isModalOpen={dialog}
+        setIsModalOpen={setDialog}
+        studentInfo={studentInfo}
+      />
     </div>
   );
 };

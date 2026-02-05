@@ -1,1 +1,4 @@
-@import "tailwindcss" ;
+@import "tailwindcss";
+.ant-modal .ant-modal-container {
+    background-color: #F8FAFC !important;
+}
