@@ -16,9 +16,9 @@ const ReviewDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
-  const [studentInfo, setStudentInfo] = useState();
+  const [studentInfo, setStudentInfo] = useState()
   const [checkAll, setCheckAll] = useState(false);
-  const [dialog, setDialog] = useState(false);
+  const [dialog, setDialog] = useState(false)
   const fetchData = async () => {
     const response = await fetch(`/api/review-cycles/${id}`);
     const data = await response.json();
@@ -50,9 +50,9 @@ const ReviewDetail: React.FC = () => {
     navigate(`aiautopoint/${value.id}`);
   };
   const handleRankPoint = (value: any) => {
-    setStudentInfo(value);
-    setDialog(true);
-  };
+    setStudentInfo(value)
+    setDialog(true)
+  }
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`);
   };
@@ -213,11 +213,10 @@ const ReviewDetail: React.FC = () => {
           pagination={{ pageSize: 8 }}
         />
       </Card>
-      <RankPoint
-        isModalOpen={dialog}
-        setIsModalOpen={setDialog}
-        studentInfo={studentInfo}
-      />
+      {
+        dialog && <RankPoint isModalOpen={dialog} setIsModalOpen={setDialog} studentInfo={studentInfo} />
+      }
+
     </div>
   );
 };
