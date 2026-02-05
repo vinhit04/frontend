@@ -2,7 +2,7 @@ import { EditOutlined, EyeOutlined, MoreOutlined } from "@ant-design/icons";
 import { Button, Card, Checkbox, Dropdown, Table, Tag } from "antd";
 import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import RankPoint from "../components/RankPoint";
+import RankPoint from "./RankPoint";
 interface Student {
   checkbox: boolean;
   id: number;
@@ -17,7 +17,7 @@ const ReviewDetail: React.FC = () => {
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
   const [checkAll, setCheckAll] = useState(false);
-  const [dialog, setDialog] = useState(false);
+  const [dialog, setDialog] = useState(false)
   const fetchData = async () => {
     const response = await fetch(`/api/review-cycles/${id}`);
     const data = await response.json();
@@ -48,16 +48,13 @@ const ReviewDetail: React.FC = () => {
   const handleAIAutoPoint = (value: any) => {
     navigate(`aiautopoint/${value.id}`);
   };
-
   const handleRankPoint = (value: any) => {
-    setDialog(true);
-    navigate(`rankpoint/${value.id}`);
-  };
-
+    // navigate(`rankpoint/${value.id}`);
+    setDialog(true)
+  }
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`);
   };
-
   const handleCheck = useCallback((data: any, value: any) => {
     setListStudent((prev) =>
       prev.map((x: any) => (x.id === data.id ? { ...x, isCheck: value } : x)),
@@ -199,7 +196,7 @@ const ReviewDetail: React.FC = () => {
         <div className="flex justify-between my-4">
           <h2 className="text-xl font-semibold">Danh sách sinh viên</h2>
           <div className="flex gap-2">
-            <Button>AI chấm điểm hàng loạt</Button>
+            <Button >AI chấm điểm hàng loạt</Button>
             <Button type="default">Chấm điểm hàng loạt</Button>
             <Button type="primary" danger>
               Import điểm
