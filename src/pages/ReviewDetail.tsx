@@ -216,9 +216,6 @@ const ReviewDetail: React.FC = () => {
       {
         dialog && <RankPoint isModalOpen={dialog} setIsModalOpen={setDialog} studentInfo={studentInfo} />
       }
-      <p>
-        đây nhá tao thêm dòng code này
-      </p>
     </div>
   );
 };
