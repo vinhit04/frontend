@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import { useParams, useNavigate } from "react-router-dom";
-import { Card, Button, Table, Tag, Dropdown, Checkbox } from "antd";
-import { MoreOutlined, EyeOutlined, EditOutlined } from "@ant-design/icons";
-import { useCallback, useEffect, useState } from "react";
-import React from "react";
-=======
 import { EditOutlined, EyeOutlined, MoreOutlined } from "@ant-design/icons";
 import { Button, Card, Checkbox, Dropdown, Table, Tag } from "antd";
 import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import RankPoint from "./RankPoint";
->>>>>>> 07cdfa1479aa2a2d294ebdd1de76df874ef50468
+import RankPoint from "../components/RankPoint";
 interface Student {
   checkbox: boolean;
   id: number;
@@ -25,7 +17,7 @@ const ReviewDetail: React.FC = () => {
   const navigate = useNavigate();
   const [listStudent, setListStudent] = useState<Student[]>([]);
   const [checkAll, setCheckAll] = useState(false);
-  const [dialog, setDialog] = useState(false)
+  const [dialog, setDialog] = useState(false);
   const fetchData = async () => {
     const response = await fetch(`/api/review-cycles/${id}`);
     const data = await response.json();
@@ -56,18 +48,16 @@ const ReviewDetail: React.FC = () => {
   const handleAIAutoPoint = (value: any) => {
     navigate(`aiautopoint/${value.id}`);
   };
+
   const handleRankPoint = (value: any) => {
-<<<<<<< HEAD
+    setDialog(true);
     navigate(`rankpoint/${value.id}`);
   };
-=======
-    // navigate(`rankpoint/${value.id}`);
-    setDialog(true)
-  }
->>>>>>> 07cdfa1479aa2a2d294ebdd1de76df874ef50468
+
   const handleXemDiem = (value: any) => {
     navigate(`cyclicalpoints/${value.id}`);
   };
+
   const handleCheck = useCallback((data: any, value: any) => {
     setListStudent((prev) =>
       prev.map((x: any) => (x.id === data.id ? { ...x, isCheck: value } : x)),
@@ -205,7 +195,6 @@ const ReviewDetail: React.FC = () => {
           </div>
         </div>
       </Card>
-
       <Card className="">
         <div className="flex justify-between my-4">
           <h2 className="text-xl font-semibold">Danh sách sinh viên</h2>

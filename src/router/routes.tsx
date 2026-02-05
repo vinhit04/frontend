@@ -3,7 +3,7 @@ import DanhGia from "../pages/DanhGia";
 import NotFound from "../pages/NotFound";
 import ReviewDetail from "../pages/ReviewDetail";
 import AIAutoPoint from "../pages/AIAutoPoint";
-import RankPoint from "../pages/RankPoint";
+import RankPoint from "../components/RankPoint";
 export const routes = [
   {
     path: "/evaluate",
@@ -25,4 +25,8 @@ export const routes = [
     path: "/evaluate/:id/aiautopoint/:id",
     element: <AIAutoPoint />,
   },
+  {
+    path: "/evaluate/:id/rankpoint/:id",
+    element: <RankPoint />,
+  }
 ];

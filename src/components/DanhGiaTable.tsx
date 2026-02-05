@@ -10,7 +10,6 @@ interface DanhGia {
   status: "Sắp diễn ra" | "Đang diễn ra" | "Đã kết thúc";
   total: number;
 }
-
 const data: DanhGia[] = [
   {
     key: "1",
